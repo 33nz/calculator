@@ -1,1 +1,1 @@
-# calculator
+My attempt to build a simple yet functional calculator using JS, HTML and CSS.
