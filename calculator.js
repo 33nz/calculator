@@ -14,7 +14,7 @@ function listen() {
 function getButtonValue(event) {
   let button = event.target.value //retrieves the value of the button
   if (!isNaN(button) || button === '.') {
-    number(button)
+    number(button) //call the number function for numbers and decimal point only.
   } else if (button === 'AC') {
     allClear()
   } else if (button === 'CE') {
@@ -22,7 +22,7 @@ function getButtonValue(event) {
   } else if (button === '=') {
     calculate()
   } else {
-    storeNumber(button)
+    storeNumber(button) //call storeNumber for operators like +, * etc.
   }
 }
 
