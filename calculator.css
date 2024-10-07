@@ -1,3 +1,26 @@
-body {
-  font-family: 'Chakra+Petch', monospace;
+body,
+html {
+  font-family: 'Chakra+Petch', sans-serif;
+  width: 100%;
+  background-color: rgb(76, 24, 97);
+}
+
+.calculator {
+  width: 350px;
+  height: 500px;
+  background-color: rgb(178, 176, 166);
+  margin: 80px;
+  text-align: center;
+  position: relative;
+}
+
+.row {
+  display: block;
+}
+
+.title {
+  padding: 2px;
+  margin: 5px;
+  color: rgb(75, 76, 75);
+  font-size: 30px;
 }
