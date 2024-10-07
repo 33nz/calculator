@@ -9,9 +9,9 @@ function listen() {
   document.addEventListener('click', getButtonValue)
 }
 
-function getButtonValue() {
+function getButtonValue(event) {
   let button = event.target.value //retrieves the value of the button
-  if (!NaN(button) || button === '.') {
+  if (!isNaN(button) || button === '.') {
     number(button)
   } else if (button === 'AC') {
     allClear()
@@ -65,4 +65,30 @@ function storeNumber(button) {
     numArray.push(button)
     numString = ''
   }
+}
+
+function calculate() {
+  numArray.push(numString)
+  let currentNumber = Number(numArray[0])
+  for (let i = 0; i < numArray.length; i++) {
+    let nextNumber = Number(numArray[i + 1])
+    let symbol = numArray[i]
+    if (symbol === '+') {
+      currentNumber += nextNumber
+    } else if (symbol === '-') {
+      currentNumber -= nextNumber
+    } else if (symbol === '*') {
+      currentNumber *= nextNumber
+    } else if (symbol === '/') {
+      currentNumber /= nextNumber
+    }
+  }
+  if (currentNumber < 0) {
+    currentNumber = Math.abs(currentNumber) + '-'
+  }
+
+  display.value = currentNumber
+  numString = JSON.stringify(currentNumber)
+  isPreviousResult = true
+  numArray = []
 }
