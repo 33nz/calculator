@@ -5,10 +5,12 @@ let isPreviousResult = false
 
 listen()
 
+// set up an event listener for clicks on the document to get button value
 function listen() {
   document.addEventListener('click', getButtonValue)
 }
 
+// determine which button was clicked, handle the input and call the correct function based on input
 function getButtonValue(event) {
   let button = event.target.value //retrieves the value of the button
   if (!isNaN(button) || button === '.') {
@@ -24,6 +26,7 @@ function getButtonValue(event) {
   }
 }
 
+// logic for inputting numbers into the calculator, preventing invalid entries and updating display.
 function number(button) {
   if (button === '.' && numString.includes('.')) {
     return
@@ -43,17 +46,20 @@ function number(button) {
   }
 }
 
+// reset all variables
 function allClear() {
   numString = ''
   numArray = []
   display.value = '0'
 }
 
+// reset current number and display
 function clear() {
   numString = ''
   display.value = '0'
 }
 
+// add current number or operator into the array and handle scenario where input is empty or operator needs replacing
 function storeNumber(button) {
   if (numString === '' && numArray.length === 0) {
     return
@@ -67,6 +73,7 @@ function storeNumber(button) {
   }
 }
 
+// perform the arithmetic on the numbers in the array, update the display and prepare for new input.
 function calculate() {
   numArray.push(numString)
   let currentNumber = Number(numArray[0])
