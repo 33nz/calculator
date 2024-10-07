@@ -13,6 +13,25 @@ function getButtonValue() {
   }
 }
 
+function number(button) {
+  if (button === '.' && numString.includes('.')) {
+    return
+  } else if (
+    numString.charAt(0) === '0' &&
+    numString.length === 1 &&
+    button === '0'
+  ) {
+    return
+  } else {
+    if (isPreviousResult === true) {
+      numString = ''
+      isPreviousResult = false
+    }
+    numString += button
+    display.value = numString
+  }
+}
+
 function allClear() {
   numString = ''
   numArray = []
@@ -25,7 +44,7 @@ function clear() {
 }
 
 function storeNumber(button) {
-  if (numString === '' && numArray.lenght === 0) {
+  if (numString === '' && numArray.length === 0) {
     return
   } else if (numString === '') {
     numArray.length = numArray.length - 1
