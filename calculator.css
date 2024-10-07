@@ -24,3 +24,53 @@ html {
   color: rgb(75, 76, 75);
   font-size: 30px;
 }
+
+.tagline {
+  text-transform: uppercase;
+  color: rgb(75, 76, 75);
+  font-size: smaller;
+}
+
+.input[type='text'] {
+  background-color: rgb(109, 145, 118);
+  width: 85%;
+  font-size: 30px;
+  direction: rtl;
+  padding-right: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.button {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(75, 76, 75);
+  color: white;
+  font-size: 15px;
+  border-radius: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  outline: 1px;
+}
+
+.ctrl {
+  width: 70px;
+  height: 70px;
+  background-color: rgb(140, 22, 22);
+  color: white;
+  font-size: 15px;
+  border-radius: 1px;
+  margin-left: 1px;
+  margin-right: 1px;
+  margin-bottom: 1px;
+  outline: 1px;
+}
+
+.button.wide {
+  width: 146px;
+}
+
+.ctrl.wide {
+  width: 146px;
+}
