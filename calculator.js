@@ -3,6 +3,8 @@ let numArray = []
 let display = document.getElementById('display')
 let isPreviousResult = false
 
+listen()
+
 function listen() {
   document.addEventListener('click', getButtonValue)
 }
@@ -10,6 +12,15 @@ function listen() {
 function getButtonValue() {
   let button = event.target.value //retrieves the value of the button
   if (!NaN(button) || button === '.') {
+    number(button)
+  } else if (button === 'AC') {
+    allClear()
+  } else if (button === 'CE') {
+    clear()
+  } else if (button === '=') {
+    calculate()
+  } else {
+    storeNumber(button)
   }
 }
 
